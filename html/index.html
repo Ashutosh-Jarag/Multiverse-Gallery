@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Rubik', sans-serif;
+    }
+
+    body {
+        background: #ecf4fb;
+    }
+    .img-gallery{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+        grid-gap: 30px;
+        width: 80%;
+        margin: 100px auto 50px;
+    }
+    .img-gallery img{
+        width: 100%;
+        cursor: pointer;
+    }
+    .img-gallery img:hover{
+        transform: scale(1.5);
+    }
+    .full-img{
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, o.9);
+        position: fixed;
+        top: 0;
+        right: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+    }
+    .full-img img{
+        width: 90%;
+        max-width: 500px;
+
+    }
+    .full-img span{
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        font-size: 30px;;
+        color: black;
+        cursor: pointer;
+    }
+    
+</style>
+
+<body>
+    <div class="full-img" id="fullimgbox">
+       
+        <img src="https://cdn.pixabay.com/photo/2014/11/13/06/12/boy-529067_640.jpg" alt="fff" id="fullimg">
+        <span onclick="closefullimg()">X</span>
+    </div>
+    <div class="img-gallery">
+        <img src="https://cdn.pixabay.com/photo/2014/11/13/06/12/boy-529067_640.jpg" onclick="openfullimg(this.src)" >
+        <img src="https://media.istockphoto.com/id/916036268/photo/businesswoman-hands-using-laptop-with-icon-social-media-and-social-network.jpg?s=1024x1024&w=is&k=20&c=6PzLNWuIu01Q1lZfTDiaOHI68iY9yWuW7fwK7sHcW-A=" onclick="openfullimg(this.src)">
+        <img src="https://cdn.pixabay.com/photo/2016/02/28/12/55/boy-1226964_1280.jpg" alt="kk" onclick="openfullimg(this.src)">
+        <img src="https://media.istockphoto.com/id/1423605865/photo/india-at-night-viewed-from-space-with-city-lights-showing-activity-in-indian-cities-delhi.jpg?s=1024x1024&w=is&k=20&c=BDyjw2NiCsyqxQUlw5wO6uqV-uj0kXrQuXt7pa4mz4U=" onclick="openfullimg(this.src)">
+        <img src="https://cdn.pixabay.com/photo/2016/11/29/12/13/fence-1869401_1280.jpg" alt="zz"onclick="openfullimg(this.src)">
+        <img src="https://cdn.pixabay.com/photo/2023/12/27/17/10/volkswagen-8472504_1280.jpg" alt="xx"onclick="openfullimg(this.src)">
+        <img src="https://cdn.pixabay.com/photo/2023/12/26/16/08/ai-generated-8470554_1280.jpg" alt="mm"onclick="openfullimg(this.src)">
+        <img src="https://cdn.pixabay.com/photo/2023/12/08/23/46/cat-8438334_1280.jpg" alt="nn"onclick="openfullimg(this.src)">
+    </div>
+   <script>
+    var fullimgbox=document.getElementById("fullimgbox");
+    var fullimg=document.getElementById("fullimg");
+
+    function openfullimg(pic){
+        fullimgbox.style.display="flex";
+        fullimg.src=pic;
+    }
+
+    function closefullimg(){
+        fullimgbox.style.display="none";
+    }
+   </script> 
+
+</body>
+
+</html>
